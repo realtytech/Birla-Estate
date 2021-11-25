@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="assets/images/slogo.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Thanking You - Birla Estate</title>
+    <!-- Favicon -->
+    <!-- <link rel="icon" type="image/png" href="assets/images/fab.png" /> -->
+    <!-- Favicon End -->
+    <link href="assets/css/bootstrap.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/owl.carousel.min.css" rel="stylesheet">
+    <link href="assets/css/owl.theme.default.css" rel="stylesheet">
+    <link href="assets/css/selectbox.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/media.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/lightgallery.min.css" rel="stylesheet">
+    
+
+</head>
+
+<body>
+    <!-- Wrapper -->
+    <div class="wrapper normal-wrap">
+        <!-- Header -->
+        <header class="normal-header">
+            <div class="container">
+                <!-- Branding -->
+                <a href="#" class="branding"><img src="assets/images/logo.png" alt=""></a>
+                <!-- Branding End -->
+                <!-- Right Bar -->
+                <div class="rightbar-sec">
+                    <div><a href="tel:++917506336924"><button type="button" class="custom-btn gradient-blue">Call: +91 916 821 5551</button></a></div>
+                </div>
+                <!-- Right Bar End -->
+            </div>
+        </header>
+        
+        <!-- Header End -->
+        <!-- banner -->
+        <section class="banner-wrapper details-page-banner">
+            <div class="banner-content">
+                <h2>Thank You For Contact Us, Our Representative Get In Touch With You Shortly!!</h2>
+            </div>
+            <div class="owl-carousel owl-theme" id="homebanner">
+                <div class="item">
+                    <figure class="main-image"><img src="assets/images/banner1.jpg" alt=""></figure>
+                </div>
+                <div class="item">
+                    <figure class="main-image"><img src="assets/images/banner2.jpg" alt=""></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="copyright">
+                <div class="container">
+                    <span class="text">Copyright © 2021 All Rights Reserved. <hr>
+                        <br>
+                    <p>Disclaimer : This is not the official website of developer, it belongs to the authorised channel partner for information & marketing purposes only. All rights for logo & images are reserved by the developer. By using or accessing this website you agree with the disclaimer without any limitation. By accessing this website, the viewer confirms that the information including brochures and marketing collaterals on this website are solely for informational purposes only, and the viewer has not relied on this information for making any booking/purchase in any project of the company.</p></span>
+                    
+                </div>
+            </div>
+        </footer>
+     
+    <!-- Footer End -->
+        <div class="planbtn-mob">
+            <img src="assets/images/envelope.svg" alt="">
+        </div>
+    </div>
+    <!-- Wrapper End -->
+        <!-- Bottom Section -->
+    <div class="bottom-section-wrap">
+        
+
+        <div class="planbtn-mob">
+            <div><a href="tel:+917506336924">Call: +91 75063 36924</a></div>
+        </div>
+    </div>
+    <!-- Bottom Section End  -->   
+        
+        
+        
+        
+    <!-- JS -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <script src="assets/js/bootstrap-select.js"></script>
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/lightgallery-all.min.js"></script>
+    <script src="assets/js/jquery.mousewheel.min.js"></script>
+    <script>
+        (function() {
+            $('a[href^="#"]').on('click', function(event) {
+                event.preventDefault();
+                $(document).off("scroll");
+
+                $('a').each(function() {
+                    $(this).removeClass('activetab');
+                })
+                $(this).addClass('activetab');
+                var target = this.hash,
+                    menu = target;
+                $target = $(target);
+                $('html, body').stop().animate({
+                    'scrollTop': $target.offset().top - $('.tabs-wrapper').outerHeight() + 9
+                }, 500);
+            });
+            $('#homebanner').owlCarousel({
+                items: 1,
+                autoplay: true,
+                loop: true,
+                autoplayTimeout: 7000,
+                animateOut: 'fadeOut',
+                navigation: false,
+                dots: false
+                    //autoplayHoverPause: true,
+            });
+            $('.selectpicker').selectpicker({});
+            $(".searchbtn").click(function() {
+                $(this).parent().toggleClass('oepnbar');
+            });
+            $(".parareadm").click(function(event) {
+                event.preventDefault();
+                var elem = $(this).text();
+                if (elem == "Read More") {
+                    $(this).text("Read Less");
+                    $(this).parent().children(".more-content-sec").slideDown();
+                } else {
+                    $(this).text("Read More");
+                    $(this).parent().children(".more-content-sec").slideUp();
+                }
+            });
+            $('.projectlocation-owl').owlCarousel({
+                loop: true,
+                margin: 10,
+                dots: true,
+                nav: false,
+                responsiveClass: true,
+                autoplay: true,
+                autoplayTimeout: 2500,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    767: {
+                        items: 2
+                    },
+                    1199: {
+                        items: 3
+                    },
+                    1366: {
+                        items: 3
+                    },
+                    1600: {
+                        items: 3
+                    }
+                }
+            });
+            $('.bhkmtabs li a').click(function(e) {
+                $('.bhkmtabs li a').removeClass('active');
+                $(this).addClass('active');
+                $('.bhkcont-tabs').hide();
+                $('#' + $(this).attr('data-target')).show();
+                e.preventDefault();
+            });
+            $('.maptabs li a').click(function(e) {
+                $('.maptabs li a').removeClass('active');
+                $(this).addClass('active');
+                $('.mapcont-tabs').hide();
+                $('#' + $(this).attr('data-target')).show();
+                e.preventDefault();
+            });
+            $('.ins-tabs-list li a').click(function(e) {
+                $('.ins-tabs-list li a').removeClass('active');
+                $(this).addClass('active');
+                $('.instabs-intersec').hide();
+                $('#' + $(this).attr('data-target')).show();
+                e.preventDefault();
+            });
+            $(window).on("scroll", function() {
+                var cur_pos = $(this).scrollTop();
+                $('.whitesection-wrap').each(function() {
+                    var top = $(this).offset().top - $('.tabs-wrapper').outerHeight(),
+                        bottom = top + $(this).outerHeight();
+                    if (cur_pos >= top && cur_pos <= bottom) {
+                        $('.tabs-wrapper').find('a').removeClass('activetab');
+                        $('.whitesection-wrap').removeClass('active');
+                        $(this).addClass('active');
+                        $('.tabs-wrapper').find('a[href="#' + $(this).attr('id') + '"]').addClass('activetab');
+                    }
+                });
+            });
+
+            $(".planbtn-mob").click(function(e) {
+                $(".ins-plan-rt-sec").addClass('open');
+            });
+            $(".close-plan-pop").click(function(e) {
+                $(".ins-plan-rt-sec").removeClass('open');
+            });
+            $('#floordes-gal').lightGallery();
+        })();
+    </script>
+    <!-- JS End -->
+</body>
+
+</html>
