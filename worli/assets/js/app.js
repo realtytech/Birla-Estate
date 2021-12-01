@@ -75,13 +75,9 @@ $("form").submit(function (e) {
     e.preventDefault();
 
     // handle button click
-    $("#submit_button-popup").prop('disabled', true);
-    $("#submit_button-popup").prop("value", "Processing....");
-    // handle button click
-    $("#submit_button_mobile").prop('disabled', true);
-    $("#submit_button_mobile").prop("value", "Processing....");
-    $("#submit_button").prop('disabled', true);
-    $("#submit_button").prop("value", "Processing....");
+    $("form :button").prop('disabled', true);
+    $('form :button').text("Processing....");
+
     var formName = "Popup-Form";
 
     // Query Params
@@ -93,7 +89,7 @@ $("form").submit(function (e) {
     var email = e.target[1].value;
     var mobile =e.target[2].value;
     console.log([name,email,mobile]);
- 
+
     if (name == "") {
         alert('Please enter your name');
         return;
